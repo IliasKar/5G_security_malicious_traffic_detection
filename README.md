@@ -61,25 +61,26 @@ NSL-KDD: [](https://www.unb.ca/cic/datasets/nsl.html)
 Full connected deep neural network.
 RandomSearchCV was used for training with cross validation and best parameters 
 extracted are the following:
-3 hidden layers.
-hidden layer 1 = 256 neurons
-hidden layer 2 = 32 neurons
-hidden layer 3 = 32 layers
-learning_rate = 0.0003467
-Kernel initializer = glorot_uniform
-Dropout = 0.2
+
+*  3 hidden layers
+*  hidden layer 1 = 256 neurons
+*  hidden layer 2 = 32 neurons
+*  hidden layer 3 = 32 layers
+*  learning_rate = 0.0003467
+*  Kernel initializer = glorot_uniform
+*  Dropout = 0.2
 
 Training data:
-Epochs = 75
-verbose =2
-batch size = 2000
-scoring = f1_macro
-optimizer = RMSprop
-loss = binary_crossentropy
+
+*  Epochs = 75
+*  verbose =2
+*  batch size = 2000
+*  scoring = f1_macro
+*  optimizer = RMSprop
+*  loss = binary_crossentropy
 
 DNN results:
-precision    recall  f1-score   support
-
+| precision | recall | f1-score | support |
            0       1.00      1.00      1.00     12833
            1       1.00      1.00      1.00      9711
 
@@ -91,9 +92,8 @@ Best score:  0.9999680776451911
 Estimator time: 645.5822646617889
 Prediction time: 0.7374951839447021
 Total time for fit and predict: 646.3197634220123 seconds
-Confusion matrix:
-[[12813    20]
- [   37  9674]]
+
+
 ![](plots/cm_nn.png) 
  
  
