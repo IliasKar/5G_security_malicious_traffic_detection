@@ -1,0 +1,115 @@
+.cscf1-active-label,
+.cscf1-passive-label,
+.cscf2-active-label,
+.cscf2-passive-label,
+.cscf1-activating-label,
+.cscf2-activating-label,
+.cscf1-semi-active-label,
+.cscf2-semi-active-label,
+.ims-label,
+.radio-label,
+.sdl-label {
+    padding-right: 15px;
+    padding-left: 15px;
+    text-align: center;
+    color: white;
+    background-color: @brand-primary;
+    border-radius: 3px;
+}
+
+.call-established-label,
+.call-waiting-label,
+.call-on-hold-label {
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-align: center;
+    color: white;
+    background-color: @gray;
+    border-radius: 3px;
+
+    i {
+        font-size: 1.7em;
+        padding-bottom: 5px;
+    }
+}
+
+.call-established-label {
+    background-color: @brand-primary;
+}
+
+.sdl-label {
+    font-size: 1.2em;
+}
+
+.ims-label,
+.radio-label {
+    padding-top: 10px;
+
+    p {
+        padding-top: 5px;
+    }
+}
+
+.cscf1-semi-active-label,
+.cscf2-semi-active-label,
+.cscf1-activating-label,
+.cscf2-activating-label {
+    opacity: 0.65;
+}
+
+.cscf1-passive-label,
+.cscf2-passive-label {
+    background-color: @gray;
+    opacity: 0.5;
+
+    i {
+        font-size: 1.2em;
+    }
+}
+
+.subscriber1-label,
+.subscriber2-label {
+    padding-top: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    text-align: center;
+
+    p {
+        margin-top: 5px;
+    }
+}
+
+
+@media only screen and (min-width: 1700px) {
+    .subscriber1-label,
+    .subscriber2-label,
+    .cscf1-active-label,
+    .cscf1-passive-label,
+    .cscf2-active-label,
+    .cscf2-passive-label,
+    .cscf1-activating-label,
+    .cscf2-activating-label,
+    .cscf1-semi-active-label,
+    .cscf2-semi-active-label,
+    .ims-label,
+    .radio-label,
+    .sdl-label {
+        font-size: 2.3em;
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+
+    .call-established-label,
+    .call-waiting-label,
+    .call-on-hold-label {
+        font-size: 2.3em;
+        padding-top: 15px;
+        padding-right: 20px;
+        padding-left: 20px;
+
+        i {
+            padding-bottom: 15px;
+        }
+    }
+}

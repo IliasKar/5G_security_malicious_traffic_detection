@@ -1,0 +1,242 @@
+@arrow-size: 28px;
+@arrow-sep: 6px;
+
+.arrow(@color) {
+    width: 0;
+    height: 0;
+    border-top: @arrow-size inset transparent;
+    border-bottom: @arrow-size inset transparent;
+    border-left: @arrow-size solid @color;
+    position: absolute;
+    content: "";
+    top: 0;
+}
+// Nav Wizard
+// From github.com/acornejo/bootstrap-nav-wizard
+// -------------------------
+
+.nav-wizard {
+    width: 880px;
+    margin: 0 auto 30px;
+
+    > li {
+        float: left;
+
+        > label {
+            position: relative;
+            background-color: @gray-lighter;
+            padding: 15px 39px;
+            font-size: 1.6em;
+            height: 56px;
+            padding-top: 0;
+            padding-bottom: 0;
+            line-height: 56px;
+            margin-bottom: 0;
+            color: @gray-medium;
+
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+
+            .badge {
+                margin-left: 3px;
+                color: @nav-link-hover-bg;
+                background-color: @badge-active-color;
+            }
+
+            &:after {
+                -webkit-transition: all .3s ease-in-out;
+                -moz-transition: all .3s ease-in-out;
+                -o-transition: all .3s ease-in-out;
+                transition: all .3s ease-in-out;
+            }
+        }
+
+        &:not(:first-child) > label {
+            padding-left: 2*@arrow-size - @arrow-sep;
+
+            &:before {
+                .arrow(#fff);
+                left: 0;
+            }
+        }
+
+        &:not(:last-child) > label {
+            margin-right: @arrow-sep;
+
+            &:after {
+                .arrow(@gray-lighter);
+                right: -@arrow-size;
+                z-index: 2;
+            }
+        }
+
+        &:first-child > label {
+            border-top-left-radius: @nav-pills-border-radius;
+            border-bottom-left-radius: @nav-pills-border-radius;
+        }
+
+        &:last-child > label {
+            border-top-right-radius: @nav-pills-border-radius;
+            border-bottom-right-radius: @nav-pills-border-radius;
+        }
+        /*
+        &.done:hover > label,
+        &:hover > label {
+            background-color: darken(@nav-link-hover-bg, 10%);
+
+            &:before {
+                border-right-color: darken(@nav-link-hover-bg, 10%);
+            }
+
+            &:after {
+                border-left-color: darken(@nav-link-hover-bg, 10%);
+            }
+        }
+        */
+        &.done > label {
+            background-color: darken(@nav-link-hover-bg, 5%);
+
+            &:before {
+                border-right-color: darken(@nav-link-hover-bg, 5%);
+            }
+
+            &:after {
+                border-left-color: darken(@nav-link-hover-bg, 5%);
+            }
+        }
+
+        &.active > label {
+            &,
+            &:focus,
+            &:hover {
+                color: @nav-pills-active-link-hover-color;
+                background-color: @brand-primary;
+            }
+
+            &:after {
+                border-left-color: @brand-primary;
+            }
+
+            .badge {
+                color: @badge-active-color;
+                background-color: @badge-active-bg;
+            }
+        }
+
+        &.disabled > label {
+            color: @nav-disabled-link-color;
+
+            &:focus,
+            &:hover {
+                color: @nav-disabled-link-color;
+                text-decoration: none;
+                background-color: @nav-link-hover-bg;
+                cursor: default;
+            }
+
+            &:before {
+                border-right-color: @nav-link-hover-bg;
+            }
+
+            &:after {
+                border-left-color: @nav-link-hover-bg;
+            }
+        }
+        // &.active ~ li > a {
+        //   color: @nav-disabled-link-color;
+        //   &:hover,
+        //   &:focus {
+        //     color: @nav-disabled-link-hover-color;
+        //     text-decoration: none;
+        //     background-color: transparent;
+        //     cursor: not-allowed;
+        //   }
+        //     // background-color: darken(@nav-link-hover-bg, 20%);
+        //     // &:before {
+        //     //     border-right-color: darken(@nav-link-hover-bg, 20%);
+        //     // }
+        //     // &:after {
+        //     //     border-left-color: darken(@nav-link-hover-bg, 20%);
+        //     // }
+        // }
+    }
+}
+
+.nav-wizard.nav-justified {
+    > li {
+        float: none;
+
+        > label {
+            padding: @nav-link-padding;
+        }
+    }
+    // Small screens size, remove the "arrows" and just show it like stacked pills.
+    @media (max-width: @screen-sm-min) {
+        > li > label {
+            border-radius: @nav-pills-border-radius;
+            margin-right: 0;
+
+            &:after,
+            &:before {
+                border: none !important;
+            }
+        }
+    }
+}
+
+.menu-link {
+    font-size: 1.1em;
+    padding: 0;
+    height: 30px;
+    line-height: 30px;
+}
+
+.left-icon {
+    float: left;
+    width: 30px;
+    height: 29px;
+    padding-top: 6px;
+    font-size: 1.1em;
+    display: inline-block;
+    color: white;
+    margin-right: 15px;
+    border-right: 1px solid white;
+}
+
+.right-icon,
+.right-icon-warning {
+    margin-top: 7px;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1em;
+    padding: 7px;
+    margin-left: 10px;
+}
+
+.right-icon {
+    border: 2px solid @gray-lighter;
+    color: @gray-lighter;
+}
+
+.right-icon-warning {
+    border: 2px solid @gray-medium;
+}
+
+.right-icon-warning-spinner {
+    margin-left: 20px;
+}
+
+.right-icon-bottom {
+    margin-top: 7px;
+    float: right;
+    margin-right: 7px;
+}
+
+.menu-action {
+    padding-right: 80px;
+    text-align: left;
+}

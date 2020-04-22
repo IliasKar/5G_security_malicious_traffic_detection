@@ -1,0 +1,39 @@
+body > .breadcrumb-container {
+    margin-top: 98px;
+    padding: 0px 15px 0px 15px !important;
+}
+.breadcrumb-image-home {
+    padding: 10px 0px;
+}
+.breadcrumb {
+    background: none;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.breadcrumb > .active {
+    color: @gray;
+}
+.breadcrumb > li a {
+    text-decoration: underline;
+}
+.breadcrumb > li + li::before {
+    content: "» ";
+    color: @brand-primary;
+}
+@media screen and (max-width: 486px) {
+    .breadcrumb > li,
+    .breadcrumb-image-home {
+        display: none;
+    }
+    .breadcrumb > li:last-child {
+        display: block;
+    }
+}
+.oveflow-hidden-text-breadcrumb {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}

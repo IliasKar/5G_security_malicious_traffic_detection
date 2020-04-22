@@ -1,0 +1,9 @@
+.komodotools/
+*.komodoproject
+*.sw*
+*~
+bin/
+node_modules
+vendor/
+.idea/
+report/
