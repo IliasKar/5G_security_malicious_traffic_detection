@@ -41,7 +41,7 @@ like M3UA threats, SMS fraud ans spam.
    implementation using Deep Neural Network fully connected. However the data
    used are not real RAN data but datasets used for Malicious traffic ML
    projects, like KDD and CTU-13.
-*  Network anomaly detection. It is a collector of timestampted and 
+*  NAD: Network anomaly detection. It is a collector of timestampted and 
    RAN-associated symptoms, produced and forwarded by ASDs, where a central 
    process in e.g. EPC analyses the timeline and the relation of these symptoms 
    to identify any network anomaly. Once an anomaly is produced, it is 
@@ -53,3 +53,71 @@ like M3UA threats, SMS fraud ans spam.
    and initiate prevention actions. This component is only partly implemented
    for the Hackathon. Only the graph generation was implemented.
 
+
+Dataset used for training:
+NSL-KDD: [](https://www.unb.ca/cic/datasets/nsl.html)
+
+**ASD NN Network description and results:**
+Full connected deep neural network.
+RandomSearchCV was used for training with cross validation and best parameters 
+extracted are the following:
+3 hidden layers.
+hidden layer 1 = 256 neurons
+hidden layer 2 = 32 neurons
+hidden layer 3 = 32 layers
+learning_rate = 0.0003467
+Kernel initializer = glorot_uniform
+Dropout = 0.2
+
+Training data:
+Epochs = 75
+verbose =2
+batch size = 2000
+scoring = f1_macro
+optimizer = RMSprop
+loss = binary_crossentropy
+
+DNN results:
+precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00     12833
+           1       1.00      1.00      1.00      9711
+
+    accuracy                           1.00     22544
+   macro avg       1.00      1.00      1.00     22544
+weighted avg       1.00      1.00      1.00     22544
+
+Best score:  0.9999680776451911
+Estimator time: 645.5822646617889
+Prediction time: 0.7374951839447021
+Total time for fit and predict: 646.3197634220123 seconds
+Confusion matrix:
+[[12813    20]
+ [   37  9674]]
+![](plots/cm_nn.png) 
+ 
+ 
+**NAD NN Network description and results:**
+LSTM : Long short term memory recurrent neural network.
+RandomSearchCV was used for training with cross validation and best parameters
+hidden_layers =4
+learning_rate = 0.0002267
+
+LSTM results:
+precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00     12833
+           1       1.00      0.99      1.00      9711
+
+    accuracy                           1.00     22544
+   macro avg       1.00      1.00      1.00     22544
+weighted avg       1.00      1.00      1.00     22544
+
+Best score: 0.9998968032832433
+Estimator time: 956.7115938663483
+Prediction time: 1.4246132373809814
+Total time for fit and predict: 958.1362102031708 seconds
+Confusion matrix:
+[[12825     8]
+ [   51  9660]]
+ ![](plots/cm_lstm.png)
