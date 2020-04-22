@@ -1,0 +1,614 @@
+/**
+ * This is the main application stylesheet. It should include or import all
+ * stylesheets used throughout the application as this is the only stylesheet in
+ * the Grunt configuration that is automatically processed.
+ */
+/**
+ * First, we include the Twitter Bootstrap LESS files. Only the ones used in the
+ * project should be imported as the rest are just wasting space.
+ */
+@import "../../node_modules/bootstrap/less/variables.less";
+@import "../../node_modules/bootstrap/less/mixins.less"; // Reset
+@import "../../node_modules/bootstrap/less/normalize.less";
+@import "../../node_modules/bootstrap/less/print.less"; // Core CSS
+@import "../../node_modules/bootstrap/less/scaffolding.less";
+@import "../../node_modules/bootstrap/less/type.less";
+@import "../../node_modules/bootstrap/less/code.less";
+@import "../../node_modules/bootstrap/less/grid.less";
+@import "../../node_modules/bootstrap/less/tables.less";
+@import "../../node_modules/bootstrap/less/forms.less";
+@import "../../node_modules/bootstrap/less/buttons.less"; // Components
+@import "../../node_modules/bootstrap/less/component-animations.less";
+@import "../../node_modules/bootstrap/less/glyphicons.less";
+@import "../../node_modules/bootstrap/less/dropdowns.less";
+@import "../../node_modules/bootstrap/less/button-groups.less";
+@import "../../node_modules/bootstrap/less/input-groups.less";
+@import "../../node_modules/bootstrap/less/navs.less";
+@import "../../node_modules/bootstrap/less/navbar.less";
+@import "../../node_modules/bootstrap/less/breadcrumbs.less";
+@import "../../node_modules/bootstrap/less/pagination.less";
+@import "../../node_modules/bootstrap/less/pager.less";
+@import "../../node_modules/bootstrap/less/labels.less";
+@import "../../node_modules/bootstrap/less/badges.less";
+@import "../../node_modules/bootstrap/less/jumbotron.less";
+@import "../../node_modules/bootstrap/less/thumbnails.less";
+@import "../../node_modules/bootstrap/less/alerts.less";
+@import "../../node_modules/bootstrap/less/progress-bars.less";
+@import "../../node_modules/bootstrap/less/media.less";
+@import "../../node_modules/bootstrap/less/list-group.less";
+@import "../../node_modules/bootstrap/less/panels.less";
+@import "../../node_modules/bootstrap/less/wells.less";
+@import "../../node_modules/bootstrap/less/close.less"; // Components w/ JavaScript
+@import "../../node_modules/bootstrap/less/modals.less";
+@import "../../node_modules/bootstrap/less/tooltip.less";
+@import "../../node_modules/bootstrap/less/popovers.less";
+@import "../../node_modules/bootstrap/less/carousel.less"; // Utility classes
+@import "../../node_modules/bootstrap/less/utilities.less";
+@import "../../node_modules/bootstrap/less/responsive-utilities.less"; // font-awesome
+@import "../../node_modules/font-awesome/less/font-awesome.less"; // ionicons
+// @import "../../node_modules/ionicons/less/ionicons.less";
+/**
+ * This is our main variables file.
+ * We must include it last so we can overwrite any variable
+ * definitions in our imported stylesheets.
+ */
+@import 'magic-bootstrap.less'; // custom less files
+@import 'navbar.less'; // @import 'breadcrumb.less';
+// @import 'alert.less';
+@import 'nav-wizard.less';
+@import 'tree-vertical.less';
+@import 'sigma.less';
+
+* {
+    font-family: 'Nokia Pure';
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+@font-face {
+    font-family: 'Nokia Pure';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/NokiaPureHWeb_Lt.woff') format('woff');
+}
+@font-face {
+    font-family: 'Nokia Pure';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/NokiaPureHWeb_Rg.woff') format('woff');
+}
+@font-face {
+    font-family: 'Nokia Pure';
+    font-style: normal;
+    font-weight: bold;
+    src: url('../fonts/NokiaPureHWeb_Bd.woff') format('woff');
+}
+@font-face {
+    font-family: 'Icons';
+    src: url('../fonts/NokiaIcons.woff') format('woff');
+}
+
+.footer {
+    box-sizing: border-box;
+    padding: 5px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    // background: url('img/top-background.jpg') repeat-x bottom;
+}
+
+body > .container:nth-child(2) {
+    margin-top: 27px;
+    padding: 0 15px;
+    background-color: lighten(@navbar-default-bg, 6.5%);
+    border: none;
+}
+
+body > .container {
+    margin-top: 20px;
+    padding: 20px 30px 70px;
+    background-color: lighten(@navbar-default-bg, 6.5%);
+    border: none;
+}
+
+.footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    color: white;
+}
+
+.icon-effect i,
+.menu-border,
+a,
+button,
+li {
+    // -o-transition: 0.5s;
+    // -ms-transition: 0.5s;
+    // -moz-transition: 0.5s;
+    // -webkit-transition: 0.5s;
+    // transition: 0.5s;
+}
+
+.top-background {
+    height: 3px;
+    background: url('img/top-background.jpg') repeat;
+    width: 100%;
+}
+
+.back-top {
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1000;
+    position: fixed;
+    right: 0;
+    top: 100%;
+    margin-top: -65px;
+}
+
+input,
+select,
+textarea {
+    border-width: 2px !important;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.text-dark {
+    color: @gray-darker;
+}
+
+.header-small {
+    // font-size: 0.6em;
+    font-size: 0.51em;
+    // color: @gray-medium;
+    margin: 5px 0;
+    padding: 0;
+}
+
+.page-title {
+    padding: 20px 30px 10px;
+    margin: -20px -30px 20px;
+    border-bottom: 1px solid @gray-light;
+}
+
+.jumbotron {
+    background: #fefefe;
+    border: 1px solid @gray-lighter;
+}
+
+.pre-style {
+    background: #ffffff;
+    font-size: 1.5em;
+    padding: 30px;
+}
+
+.spinner {
+    box-sizing: border-box;
+    height: 20px;
+    width: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+    position: absolute;
+    -webkit-animation: rotation 0.6s infinite linear;
+    -moz-animation: rotation 0.6s infinite linear;
+    -o-animation: rotation 0.6s infinite linear;
+    animation: rotation 0.6s infinite linear;
+    border-left: 2px solid @brand-info;
+    border-right: 2px solid @brand-info;
+    border-bottom: 2px solid @brand-info;
+    border-top: 2px solid lighten(@brand-info, 35%);
+    border-radius: 100%;
+}
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(359deg);
+    }
+}
+@-moz-keyframes rotation {
+    from {
+        -moz-transform: rotate(0deg);
+    }
+
+    to {
+        -moz-transform: rotate(359deg);
+    }
+}
+@-o-keyframes rotation {
+    from {
+        -o-transform: rotate(0deg);
+    }
+
+    to {
+        -o-transform: rotate(359deg);
+    }
+}
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+.max-height-288 {
+    max-height: 288px;
+    overflow-y: scroll;
+}
+
+.min-height-350 {
+    min-height: 350px;
+}
+
+.border-left {
+    border-left: 1px solid #EEEEEE;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.bs-applications li {
+    font-size: 12px;
+    width: 12.5%;
+}
+
+.bs-applications li {
+    background-color: #f9f9f9;
+    float: left;
+    font-size: 10px;
+    height: 80px;
+    line-height: 1.4;
+    text-align: center;
+    width: 30%;
+}
+
+.bs-applications-list {
+    list-style: outside none none;
+}
+
+.bs-applications .fa {
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.shared-data-layer-container {
+    border-radius: 3px;
+    background-color: @brand-primary;
+    border: 3px solid @brand-primary;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.bs-applications-heading {
+    background-color: white;
+    // border: 3px solid @brand-primary;
+    color: @brand-primary;
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+}
+
+.bs-applications li {
+    font-size: 10px;
+    line-height: 1.4;
+    text-align: center;
+    border: 2px solid @gray;
+    color: #FFFFFF;//@gray-medium;
+    background-color: @gray;
+    border-radius: 3px;
+    margin-left: 2.4%;
+}
+
+.bs-applications li.active {
+    border: 2px solid @brand-primary;
+    background-color: @brand-primary;
+    color: @gray-lighter;
+}
+
+.bs-applications li.active-success {
+    border: 2px solid @brand-success;
+    background-color: @brand-success;
+    color: @gray-lighter;
+}
+
+.bs-applications li.empty {
+    border: none;
+    background: none;
+}
+
+.northbound-list {
+    margin-bottom: 0 !important;
+}
+
+.northbound-list li {
+    width: 30%;
+    // margin-left: 0 !important;
+    margin-left: 16.5%;
+}
+
+.bs-applications-list {
+    list-style: outside none none;
+    padding-left: 0;
+}
+
+.bs-applications {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.bs-applications {
+    margin: 0 -10px 20px;
+    overflow: hidden;
+}
+
+.applications-class {
+    font-size: 1.5em;
+}
+
+.applications-class-small {
+    font-size: 0.8em;
+}
+
+.component-img {
+    margin-top: -5px;
+}
+
+.transfer-container {
+    padding-left: 0;
+    font-size: 2em;
+    transform: rotate(270deg);
+    transform-origin: left top 0;
+    text-align: left;
+    height: 5px;
+    width: 32px;
+    background-color: @brand-primary;
+}
+
+.transfer-container-hss {
+    margin: 32px 0 -8px 17%;
+}
+
+.transfer-container-cmg {
+    margin: 32px 0 -8px 25.3%;
+}
+
+.transfer-container-mme {
+    margin: 1px 0 -8px 81.6%;
+}
+
+.transfer-container-sdl {
+    margin: 32px 0 -5px 31.2%;
+}
+
+.transfer-container-horizontal {
+    padding-left: 2px;
+    font-size: 2em;
+    transform-origin: left top 0;
+    text-align: left;
+    margin: 0 0 -43px 50px;
+    top: 40px;
+    position: absolute;
+    height: 5px;
+    width: 33px;
+    background-color: @brand-primary;
+}
+
+@horizontalmax: ~"only screen and (max-width: 1200px)";
+@horizontalmin: ~"only screen and (min-width: 1200px)";
+@media @horizontalmax {
+    .transfer-container-horizontal {
+        left: 33.2%;
+    }
+}
+@media @horizontalmin {
+    .transfer-container-horizontal {
+        left: 35.5%;
+    }
+}
+
+.tranfer-indication {
+    width: 1px;
+    overflow: hidden;
+    display: block;
+    border-top: 3px dotted @gray-lighter;
+    margin-top: 1px;
+    margin-left: 1px;
+    font-size: 0.3em;
+}
+
+.loading {
+    -webkit-animation-name: transfer;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 0s;
+    -moz-animation-name: transfer;
+    -moz-animation-duration: 2s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -moz-animation-delay: 0s;
+    -o-animation-name: transfer;
+    -o-animation-duration: 2s;
+    -o-animation-iteration-count: infinite;
+    -o-animation-timing-function: linear;
+    -o-animation-delay: 0s;
+    animation-name: transfer;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+}
+@-webkit-keyframes transfer {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 30px;
+    }
+}
+
+.margin-top-73 {
+    margin-top: 73px;
+}
+
+.logo {
+    margin-left: 20px;
+}
+
+.logo-img {
+    height: 20px;
+}
+
+.gray-light-text {
+    color: darken(@gray-light, 10%);
+}
+
+.animated-font {
+    -webkit-animation: color-change 1.5s infinite;
+    -moz-animation: color-change 1.5s infinite;
+    -o-animation: color-change 1.5s infinite;
+    -ms-animation: color-change 1.5s infinite;
+    animation: color-change 1.5s infinite;
+}
+@-webkit-keyframes color-change {
+    0% {
+        color: darken(@gray-light, 10%);
+    }
+
+    50% {
+        color: @brand-success;
+    }
+
+    100% {
+        color: darken(@gray-light, 10%);
+    }
+}
+@-moz-keyframes color-change {
+    0% {
+        color: darken(@gray-light, 10%);
+    }
+
+    50% {
+        color: @brand-success;
+    }
+
+    100% {
+        color: darken(@gray-light, 10%);
+    }
+}
+@-ms-keyframes color-change {
+    0% {
+        color: darken(@gray-light, 10%);
+    }
+
+    50% {
+        color: @brand-success;
+    }
+
+    100% {
+        color: darken(@gray-light, 10%);
+    }
+}
+@-o-keyframes color-change {
+    0% {
+        color: darken(@gray-light, 10%);
+    }
+
+    50% {
+        color: @brand-success;
+    }
+
+    100% {
+        color: darken(@gray-light, 10%);
+    }
+}
+@keyframes color-change {
+    0% {
+        color: darken(@gray-light, 10%);
+    }
+
+    50% {
+        color: @brand-success;
+    }
+
+    100% {
+        color: darken(@gray-light, 10%);
+    }
+}
+
+.heading-dashboard {
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.heading-level-2 {
+    border-bottom: 1px solid @gray-lighter;
+    padding-bottom: 10px;
+}
+
+.panel-default {
+    border: none;
+    box-shadow: none;
+}
+
+.panel-default > .panel-heading {
+    background-color: white;
+    border-color: @gray-light;
+    color: #1B1B1B;
+}
+
+.endpoint-container {
+    background-color: @brand-primary;
+    color: @gray-lighter;
+    text-align: center;
+}
+
+.endpoint-container p {
+    font-size: 0.65em;
+    padding: 4px 0 3px;
+    margin: 0;
+}
+
+.margin-left-32 {
+    margin-left: 32px !important;
+}
+
+.ott-services {
+    span {
+        font-size: 2em !important;
+        margin: -7px auto;
+        width: 100px;
+        height: 200px;
+        display: block;
+    }
+}
+
+.cmm-component {
+    color: #00C9FF !important;
+}
+
+.opaque-component {
+    opacity: .6;
+}
+
+/**
+ * Include specific styles for each screen
+ */
+// @import '../app/home/home.less';
