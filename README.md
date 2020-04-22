@@ -80,7 +80,9 @@ Training data:
 *  loss = binary_crossentropy
 
 DNN results:
-| precision | recall | f1-score | support |
+
+precision    recall  f1-score   support
+
            0       1.00      1.00      1.00     12833
            1       1.00      1.00      1.00      9711
 
@@ -88,10 +90,10 @@ DNN results:
    macro avg       1.00      1.00      1.00     22544
 weighted avg       1.00      1.00      1.00     22544
 
-Best score:  0.9999680776451911
-Estimator time: 645.5822646617889
-Prediction time: 0.7374951839447021
-Total time for fit and predict: 646.3197634220123 seconds
+* Best score:  0.9999680776451911
+* Estimator time: 645.5822646617889
+* Prediction time: 0.7374951839447021
+* Total time for fit and predict: 646.3197634220123 seconds
 
 
 ![](plots/cm_nn.png) 
@@ -99,11 +101,22 @@ Total time for fit and predict: 646.3197634220123 seconds
  
 **NAD NN Network description and results:**
 LSTM : Long short term memory recurrent neural network.
-RandomSearchCV was used for training with cross validation and best parameters
-hidden_layers =4
-learning_rate = 0.0002267
+RandomSearchCV was used for training with cross validation and best parameters:
+hidden_layers =4, 
+learning_rate = 0.0002267 
+
+Training data:
+
+*  Epochs = 250
+*  verbose =2
+*  batch size = 2000
+*  scoring = accuracy
+*  optimizer = Adam
+*  loss = binary_crossentropy
+
 
 LSTM results:
+
 precision    recall  f1-score   support
 
            0       1.00      1.00      1.00     12833
@@ -113,11 +126,10 @@ precision    recall  f1-score   support
    macro avg       1.00      1.00      1.00     22544
 weighted avg       1.00      1.00      1.00     22544
 
-Best score: 0.9998968032832433
-Estimator time: 956.7115938663483
-Prediction time: 1.4246132373809814
-Total time for fit and predict: 958.1362102031708 seconds
-Confusion matrix:
-[[12825     8]
- [   51  9660]]
+* Best score: 0.9998968032832433
+* Estimator time: 956.7115938663483
+* Prediction time: 1.4246132373809814
+* Total time for fit and predict: 958.1362102031708 seconds
+
+
  ![](plots/cm_lstm.png)
