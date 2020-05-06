@@ -199,9 +199,15 @@ module.exports = {
             'node_modules/sigma/plugins/sigma.renderers.parallelEdges/sigma.canvas.edges.labels.curve.js',
             'node_modules/sigma/plugins/sigma.layout.forceAtlas2/supervisor.js',
             'node_modules/sigma/plugins/sigma.layout.forceAtlas2/worker.js',
+            'node_modules/sigma/plugins/sigma.layout.neiborhoods/sigma.layout.neiborhoods.js',
+            'node_modules/sigma/plugins/sigma.renderers.customShapes/shape-library.js',
+            'node_modules/sigma/plugins/sigma.renderers.customShapes/sigma.renderers.customShapes.js',
 
             // html2canvas
             'node_modules/html2canvas/dist/html2canvas.js',
+
+            // mustache
+            // 'node_modules/mustache/mustache.js',
         ],
         css: [],
         fonts: [
@@ -209,6 +215,8 @@ module.exports = {
             // 'node_modules/ionicons/fonts/*',
             'node_modules/bootstrap/fonts/*'
         ],
-        assets: []
+        assets: [
+            'graph_parser/*.json'
+        ]
     },
 };

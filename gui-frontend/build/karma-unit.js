@@ -60,6 +60,8 @@ module.exports = function ( karma ) {
       'node_modules/sigma/plugins/sigma.renderers.parallelEdges/sigma.canvas.edges.labels.curve.js',
       'node_modules/sigma/plugins/sigma.layout.forceAtlas2/supervisor.js',
       'node_modules/sigma/plugins/sigma.layout.forceAtlas2/worker.js',
+      'node_modules/sigma/plugins/sigma.renderers.customShapes/shape-library.js',
+      'node_modules/sigma/plugins/sigma.renderers.customShapes/sigma.renderers.customShapes.js',
       'node_modules/html2canvas/dist/html2canvas.js',
       'build/templates-app.js',
       'build/templates-common.js',

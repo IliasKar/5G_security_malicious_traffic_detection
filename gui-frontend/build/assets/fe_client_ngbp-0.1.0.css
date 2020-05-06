@@ -9218,6 +9218,42 @@ button.close {
 .graph-input {
   font-size: 0.8em;
 }
+.my-legend .legend-title {
+  text-align: left;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 90%;
+}
+.my-legend .legend-scale ul {
+  margin: 0 0 5px;
+  padding: 0;
+  float: left;
+  list-style: none;
+}
+.my-legend .legend-scale ul li {
+  font-size: 80%;
+  list-style: none;
+  margin-left: 0;
+  line-height: 18px;
+  margin-bottom: 2px;
+}
+.my-legend ul.legend-labels li span {
+  display: block;
+  float: left;
+  height: 16px;
+  width: 30px;
+  margin-right: 5px;
+  margin-left: 0;
+  border: 1px solid #999;
+}
+.my-legend .legend-source {
+  font-size: 70%;
+  color: #999;
+  clear: both;
+}
+.my-legend a {
+  color: #777;
+}
 * {
   font-family: 'Nokia Pure';
 }
@@ -9301,7 +9337,7 @@ textarea {
   color: #222222;
 }
 .header-small {
-  font-size: 0.51em;
+  font-size: 0.71em;
   margin: 5px 0;
   padding: 0;
 }
@@ -9667,6 +9703,30 @@ textarea {
 }
 .opaque-component {
   opacity: .6;
+}
+.bordered {
+  border: 1px solid gray;
+}
+.top-right {
+  top: 20px;
+  right: 20px;
+}
+.bottom-left {
+  bottom: 20px;
+  left: 20px;
+}
+.pos-relative {
+  position: relative;
+}
+.pos-absolute {
+  position: absolute;
+}
+.color-dark {
+  font-color: #222222;
+}
+.top-left {
+  top: 20px;
+  left: 20px;
 }
 /**
  * Include specific styles for each screen

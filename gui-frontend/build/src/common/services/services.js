@@ -15,8 +15,8 @@ angular.module('services', ['ngResource'])
     .constant('context', {
         'protocol': 'http',
         'host': '127.0.0.1',
-        'port': 5000,
-        'base_api_context': '/api'
+        'port': 8000,
+        'base_api_context': ''
     })
     /**
      * Example
@@ -33,7 +33,7 @@ angular.module('services', ['ngResource'])
             }
         });
     }])
-    */
+
     .factory('graphElements', ['$resource', 'context', function($resource, context) {
         return $resource(context.protocol + '://' + context.host + ':' + context.port + context.base_api_context + '/anomaly_detection/v1/', {}, {
             'get': {
@@ -41,6 +41,14 @@ angular.module('services', ['ngResource'])
             },
             'post': {
                 'method': 'POST'
+            }
+        });
+    }])
+    */
+    .factory('graphElements', ['$resource', 'context', function($resource, context) {
+        return $resource(context.protocol + '://' + context.host + ':' + context.port + context.base_api_context + '/assets/graph_elements.json', {}, {
+            'get': {
+                'method': 'GET'
             }
         });
     }])

@@ -58,6 +58,7 @@
 @import 'nav-wizard.less';
 @import 'tree-vertical.less';
 @import 'sigma.less';
+@import 'legend.less';
 
 * {
     font-family: 'Nokia Pure';
@@ -168,7 +169,7 @@ textarea {
 
 .header-small {
     // font-size: 0.6em;
-    font-size: 0.51em;
+    font-size: 0.71em;
     // color: @gray-medium;
     margin: 5px 0;
     padding: 0;
@@ -606,6 +607,37 @@ textarea {
 
 .opaque-component {
     opacity: .6;
+}
+
+.bordered {
+    border: 1px solid gray;
+}
+
+.top-right {
+    top: 20px;
+    right: 20px;
+}
+
+.bottom-left {
+    bottom: 20px;
+    left: 20px;
+}
+
+.pos-relative {
+    position: relative;
+}
+
+.pos-absolute {
+    position: absolute;
+}
+
+.color-dark {
+    font-color: @gray-darker;
+}
+
+.top-left {
+    top: 20px;
+    left: 20px;
 }
 
 /**
