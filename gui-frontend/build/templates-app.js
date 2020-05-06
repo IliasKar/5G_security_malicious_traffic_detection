@@ -17,7 +17,7 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "                <div class=\"col-md-10 bordered\">\n" +
     "                    <button ng-if=\"currentSubject !== '' && graphContainer\" class=\"btn btn-md btn-default pos-absolute top-right\" style=\"z-index: 99999;\" ng-click=\"downloadGraph()\"><i class=\"fa fa-download\"></i> Download</button>\n" +
     "                    <div class=\"pos-absolute top-left applications-class\">\n" +
-    "                        <i><strong>{{numberOfPings}}</strong> messages sent <br />\n" +
+    "                        <i><strong>{{numberOfPings}}</strong> messages sent from botnet<br />\n" +
     "                        from {{currentSubject.split(\" \")[1]}}<i>\n" +
     "                    </div>\n" +
     "                    <div class='my-legend pos-absolute bottom-left'>\n" +
