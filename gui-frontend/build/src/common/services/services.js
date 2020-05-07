@@ -14,8 +14,8 @@ angular.module('services', ['ngResource'])
     // constant variables
     .constant('context', {
         'protocol': 'http',
-        'host': '127.0.0.1',
-        'port': 8000,
+        'host': '10.157.50.105',
+        'port': 80,
         'base_api_context': ''
     })
     /**
