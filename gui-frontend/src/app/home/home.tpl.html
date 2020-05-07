@@ -3,34 +3,39 @@
         <div class="panel-body">
             <div class="row" ng-show="hasGraph">
                 <div class="col-md-2">
-                    <h4>Select capture</h4>
+                    <h4><i class="fa fa-wifi"></i> Packet captures</h4>
                     <div class="list-group">
                         <button type="button" ng-class="{'active': element.subject === currentSubject}" ng-click="showGraph($index)" class="list-group-item list-group-item-action" ng-repeat="element in graphElements track by $index">
-                            <i class="fa fa-arrow"></i> {{element.subject.split(" ")[0]}}
+                            <i class="fa fa-angle-right"></i> {{element.subject.split(" ")[0]}}
+                            <span class="badge badge-default badge-pill">{{element.number_of_packets}}</span>
                         </button>
                     </div>
                 </div>
                 <div class="col-md-10 bordered">
-                    <button ng-if="currentSubject !== '' && graphContainer" class="btn btn-md btn-default pos-absolute top-right" style="z-index: 99999;" ng-click="downloadGraph()"><i class="fa fa-download"></i> Download</button>
-                    <div class="pos-absolute top-left applications-class">
-                        <i><strong>{{numberOfPings}}</strong> messages sent from botnet<br />
-                        from {{currentSubject.split(" ")[1]}}<i>
-                    </div>
-                    <div class='my-legend pos-absolute bottom-left'>
-                        <div class='legend-title'>
-                            Number of messages exchanged
+                    <button ng-if="currentSubject !== '' && graphContainer" class="btn btn-md btn-default pos-absolute top-right z-index-front" ng-click="downloadGraph()"><i class="fa fa-download"></i> Download</button>
+                    <div id="graph-info">
+                        <div class="bordered pos-absolute top-left message z-index-front" role="tooltip">
+                            <i class="fa fa-info-circle fa-2x pull-left margin-top-5"></i>
+                            <strong>{{numberOfPings}}</strong> messages sent by botnet<br />
+                            from {{currentSubject.split(" ")[1].replace("-", " to ")}}
                         </div>
-                        <div class='legend-scale'>
-                            <ul class='legend-labels'>
-                                <li><span style='background:#a6b6bf;'></span>1</li>
-                                <li><span style='background:#026ba8;'></span>2 - 10</li>
-                                <li><span style='background:#9c5917;'></span>10 - 50</li>
-                                <li><span style='background:#4f1704;'></span>50 - 100</li>
-                                <li><span style='background:#a80202;'></span>> 100</li>
-                            </ul>
+
+                        <div class='my-legend pos-absolute bottom-left'>
+                            <div class='legend-title'>
+                                Number of messages exchanged
+                            </div>
+                            <div class='legend-scale'>
+                                <ul class='legend-labels'>
+                                    <li><span style='background:#a6b6bf;'></span>1</li>
+                                    <li><span style='background:#026ba8;'></span>2 - 10</li>
+                                    <li><span style='background:#9c5917;'></span>10 - 50</li>
+                                    <li><span style='background:#4f1704;'></span>50 - 100</li>
+                                    <li><span style='background:#a80202;'></span>> 100</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div ng-show="hasGraph" id="container">
+                        <div ng-show="hasGraph" id="container">
+                        </div>
                     </div>
                 </div>
             </div>

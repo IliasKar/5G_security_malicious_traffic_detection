@@ -99,9 +99,11 @@ def get_number_of_packets(targets):
 
 def process(index, input):
     subjects = [
-        "pcap-0 14:24:20-14:34:20",
-        "pcap-1 10:42:44-10:52:43",
-        "pcap-2 15:27:11-15:36:05",
+        "pcap142434 14:24-14:34",
+        "pcap104252 10:42-10:52",
+        "pcap152737 15:27-15:37",
+        "pcap020919 02:09-02:19",
+        "pcap024959 02:49-02:59",
     ]
     result = {
         "nodes": [],

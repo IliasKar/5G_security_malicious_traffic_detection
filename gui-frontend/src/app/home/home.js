@@ -28,16 +28,6 @@ angular.module('app.home', ['ui.router']).config(function config($stateProvider)
     $scope.isFirstload = true;
     var sigmaContainer;
 
-    sigma.classes.graph.addMethod('neighbors', function(nodeId) {
-        var i,
-            neighbors = {},
-            index = this.allNeighborsIndex.get(nodeId).keyList() || {};
-        for (i = 0; i < index.length; i++) {
-            neighbors[index[i]] = this.nodesIndex.get(index[i]);
-        }
-        return neighbors;
-    });
-
     $scope.getGraph = function() {
         graphElements.get({},
             function(response) {
@@ -55,7 +45,6 @@ angular.module('app.home', ['ui.router']).config(function config($stateProvider)
     }
 
     $scope.showGraph = function(index) {
-        console.log(index)
         $scope.loadGraph($scope.graphElements[index]);
         $scope.currentSubject = $scope.graphElements[index]["subject"];
         $scope.numberOfPings = $scope.graphElements[index]["number_of_packets"];
@@ -81,7 +70,6 @@ angular.module('app.home', ['ui.router']).config(function config($stateProvider)
                 nodeHoverColor: "node",
                 labelHoverColor: "node",
                 singleHover: true,
-                // labelSize: 20,
                 edgeHoverExtremities: true,
                 drawLabels: false,
                 hideEdgesOnMove: true,
@@ -121,8 +109,8 @@ angular.module('app.home', ['ui.router']).config(function config($stateProvider)
     }
 
     $scope.downloadGraph = function() {
-        html2canvas(document.querySelector("#container")).then(function(canvas) {
-            saveAs(canvas.toDataURL(), $scope.currentSubject + ' graph.png');
+        html2canvas(document.querySelector("#graph-info")).then(function(canvas) {
+            saveAs(canvas.toDataURL(), $scope.currentSubject + '_graph.png');
         });
     }
 
@@ -143,8 +131,6 @@ angular.module('app.home', ['ui.router']).config(function config($stateProvider)
     }
 
     $timeout(function() {
-        // $scope.loadGraph($scope.graphElements, $scope.isFirstload);
-        // $scope.isFirstload = false;
         $scope.getGraph();
     }, 500);
 });

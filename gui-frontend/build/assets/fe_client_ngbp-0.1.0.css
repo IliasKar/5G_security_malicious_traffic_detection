@@ -9204,7 +9204,7 @@ button.close {
 #container {
   max-width: 100%;
   height: 550px;
-  margin: auto;
+  margin: auto auto auto 100px;
 }
 .subject-list {
   margin-bottom: 10px;
@@ -9253,6 +9253,25 @@ button.close {
 }
 .my-legend a {
   color: #777;
+}
+.message {
+  background: #222222;
+  color: #efefef;
+  padding: 12px;
+}
+.message:after {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(0, 0, 0, 0);
+  border-top-color: #222222;
+  border-width: 10px;
+  margin-left: -10px;
 }
 * {
   font-family: 'Nokia Pure';
@@ -9727,6 +9746,12 @@ textarea {
 .top-left {
   top: 20px;
   left: 20px;
+}
+.z-index-front {
+  z-index: 99999;
+}
+.margin-top-5 {
+  margin-top: 5px;
 }
 /**
  * Include specific styles for each screen
