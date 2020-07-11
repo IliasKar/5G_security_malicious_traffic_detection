@@ -18,7 +18,7 @@
     },
     "devDependencies": {
         "@uirouter/angularjs": "^0.2.15",
-        "angular": "1.4.8",
+        "angular": "1.8.0",
         "angular-bootstrap": "0.12.2",
         "angular-breadcrumb": "0.4.1",
         "angular-cookies": "1.4.8",
