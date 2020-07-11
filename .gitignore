@@ -1,0 +1,5 @@
+logs/*
+KDD_ML_*.py
+*.png
+fit_pckl/
+*.pkl
