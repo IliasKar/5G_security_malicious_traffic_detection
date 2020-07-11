@@ -1,0 +1,74 @@
+<section id="home" class="container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <!--
+                <div class="col-md-12">
+                    <h4 class="heading-level-2">
+                        <i class="fa fa-upload"></i>
+                        Import Netflow Data
+                        <small ng-show="jsonInputContainer"><a href="" ng-click="jsonInputContainer = !jsonInputContainer"><span><i class="fa fa-minus-circle"></i></span> Hide</a></small>
+                        <small ng-show="!jsonInputContainer"><a href="" ng-click="jsonInputContainer = !jsonInputContainer"><span><i class="fa fa-plus-circle"></i></span> Show</a></small>
+                    </h4>
+                    <div ng-show="jsonInputContainer">
+                        <form class="form-group" ng-submit="getGraph()">
+                            <!-- required="true" ng-model="jsonInput" -/->
+                            <textarea  class="form-control rounded-0 graph-input" id="graph_exploer_json_input" rows="7">{"key": "value"}</textarea>
+                            <br />
+                            <button type="submit" class="btn btn-primary btn-md">
+                            <i class="fa fa-gear"></i> Process
+                        </button>
+                        </form>
+                    </div>
+                </div>
+                -->
+                <!--
+                <div class="col-md-12">
+                    <h4 class="heading-level-2">
+                        <i class="fa fa-envelope"></i>
+                        Email Subjects
+                        <small ng-show="subjectsContainer"><a href="" ng-click="subjectsContainer = !subjectsContainer"><span><i class="fa fa-minus-circle"></i></span> Hide</a></small>
+                        <small ng-show="!subjectsContainer"><a href="" ng-click="subjectsContainer = !subjectsContainer"><span><i class="fa fa-plus-circle"></i></span> Show</a></small>
+                    </h4>
+                    <div ng-show="subjectsContainer">
+                        <div ng-if="graphElements === ''" class="alert alert-info graph-alert" role="alert">
+                            <strong>Info!</strong> No data to show. Please, submit the Graph Explorer json.
+                        </div>
+                        <ul class="list-inline">
+                            <li class="subject-list" ng-repeat="graph in graphElements['result']">
+                                <a href='' ng-class=" { 'active' : graph['subject'] === currentSubject } " class="list-group-item subject-list-link" ng-click="loadGraph(graph);">{{graph["subject"]}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                -->
+                <div class="col-md-12">
+                    <h4 class="heading-level-2">
+                        <i class="fa fa-link"></i>
+                        Graph
+                        <small ng-show="graphContainer"><a href="" ng-click="graphContainer = !graphContainer"><span><i class="fa fa-minus-circle"></i></span> Hide</a></small>
+                        <small ng-show="!graphContainer"><a href="" ng-click="graphContainer = !graphContainer"><span><i class="fa fa-plus-circle"></i></span> Show</a></small>
+                    </h4>
+                    <button ng-if="currentSubject !== '' && graphContainer" class="btn btn-sm btn-default pull-right" ng-click="downloadGraph()"><i class="fa fa-download"></i> Download</button>
+                    <div id="graph-container" ng-show="graphContainer">
+                        <div ng-if="graphElements === ''" class="alert alert-info graph-alert" role="alert">
+                            <strong>Info!</strong> No data to show. Please, submit the Graph Explorer json.
+                        </div>
+                        <h4>
+                            <!--
+                            <span ng-if="currentSubject !== ''" class="label label-primary text-center">Subject: {{currentSubject}}</span>
+                            -->
+                            <span ng-if="numberOfPackets !== ''" class="label label-primary text-center">{{numberOfPings}} messages sent by botnet to the machines within ten minutes on 2011/08/17, 14:24:20 to 14:34:20</span>
+                            <span ng-if="numberOfPingsPerMachine !== '' && numberOfPingsPerMachine > 0" class="label label-danger text-center">Received {{numberOfPingsPerMachine}} message<span ng-if="numberOfPingsPerMachine > 1">s</span> from botnet</span>
+                            <!--
+                            <span class="label label-primary text-center">Initiator: {{initiator}}</span>
+                            -->
+                        </h4>
+                        <!-- ng-show="hasGraph" -->
+                        <div id="container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

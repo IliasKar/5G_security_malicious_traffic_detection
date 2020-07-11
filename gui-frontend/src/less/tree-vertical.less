@@ -1,0 +1,92 @@
+/**
+ * Framework starts from here ...
+ * ------------------------------
+ */
+.tree-vertical,
+.tree-vertical ul {
+    margin: 0 0 0 1em;
+    /* indentation */
+    padding: 5px 0 0;
+    list-style: none;
+    color: @gray-light;
+    position: relative;
+}
+
+.tree-vertical ul {
+    margin-left: 0.5em;
+}
+/* (indentation/2) */
+.tree-vertical ul:before,
+.tree-vertical:before {
+    content: "";
+    display: block;
+    width: 0;
+    position: absolute;
+    top: -1px;
+    bottom: 0;
+    left: 15px;
+    border-left: 3px solid;
+}
+
+.tree-vertical li {
+    margin: 0;
+    padding: 0 0 0 3.5em;
+    /* indentation + .5em */
+    line-height: 2em;
+    /* default list item's `line-height` */
+    position: relative;
+}
+
+.tree-vertical li:before {
+    content: "";
+    display: block;
+    width: 32px;
+    /* same with indentation */
+    height: 0;
+    border-top: 3px solid;
+    margin-top: -1px;
+    /* border top width */
+    position: absolute;
+    top: 1em;
+    /* (line-height/2) */
+    left: 15px;
+}
+
+.tree-vertical li:last-child:before {
+    background: white;
+    /* same with body background */
+    height: auto;
+    top: 1em;
+    /* (line-height/2) */
+    bottom: 0;
+}
+
+.tree-item {
+    border: 3px solid @brand-info;
+    // background-color: @brand-info;
+    color: @brand-info;
+    // border-radius: 0;
+    // font-weight: 300;
+}
+
+.tree-item-ldap {
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+.tree-item-success {
+    border: 3px solid @brand-info;
+    // background-color: @brand-info;
+    color: @brand-info; // #00C9FF;
+}
+
+.endpoints-link {
+    color: #777777;
+    font-size: 0.8em;
+}
+
+.network-topology {
+    min-height: 350px;
+}
