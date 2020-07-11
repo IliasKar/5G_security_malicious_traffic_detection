@@ -24,7 +24,7 @@
         "angular-cookies": "1.4.8",
         "angular-mocks": "1.4.8",
         "angular-resource": "1.4.8",
-        "bootstrap": "3.3.6",
+        "bootstrap": "4.5.0",
         "font-awesome": "4.5.0",
         "grunt": "^0.4.5",
         "grunt-bump": "0.0.6",
